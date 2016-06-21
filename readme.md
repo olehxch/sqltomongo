@@ -1,5 +1,11 @@
 ### Alternative MongoDB client with SQL-like queries
 
+Just install all dependencies
+
+```
+npm i
+```
+
 Before you continue to use app, you can run script to populate your database with default data
 
 ```
