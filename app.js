@@ -132,8 +132,6 @@ function parseWhere(root) {
             const [left, e1] = parseWhere(root.left)
             const [right, e2] = parseWhere(root.right)
 
-            console.log('and', left, e1)
-
             return { 
                 [left]: e1,
                 [right]: e2
@@ -185,10 +183,17 @@ function parseQuery(query) {
         if(astObj.where) {
             // just to catch strange errors when parsing queries
             try {
-                o.where = parseWhere(astObj.where)
+                let where = parseWhere(astObj.where)
+
+                // fix later
+                if(Array.isArray(where)) {
+                    where = { [where[0]]: where[1] }
+                }
+
+                o.where = where
             } catch(ex) { console.log( red(ex.stack) ) }
 
-            console.log('where: ', JSON.stringify(o.where, null, 4))
+            // console.log('where: ', JSON.stringify(o.where, null, 4))
         }
 
         if(astObj.orderby) {
