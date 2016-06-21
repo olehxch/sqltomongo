@@ -11,12 +11,19 @@ How to run console version of client
 node app
 ```
 
-#### Commands
-Write query
+#### Commands & examples
+
 ```
 SELECT _id, name FROM users
+
 SELECT * FROM users WHERE age > 26 ORDER BY age ASC
+
 SELECT * FROM users WHERE age > 26 and name <> 'John' ORDER BY age DESC
+
+SELECT _id, name FROM Users
+    WHERE name = John
+    ORDER BY _id ASC
+    LIMIT 10
 ```
 
 To exit from repl just type
@@ -36,15 +43,3 @@ SELECT [<Projections>] [FROM <Target>]
 * Only SELECT is supported
 * <Projections> supports only field query ( *, _id, name etc. )
 * <Projections> don't support subfield queries ( name.first, name.* etc. )
-
-#### Examples
-```
-SELECT _id, name FROM Users
-```
-
-```
-SELECT _id, name FROM Users
-    WHERE name = John
-    ORDER BY _id ASC
-    LIMIT 10
-```
