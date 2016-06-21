@@ -1,4 +1,4 @@
-# Alternative MongoDB client with SQL-like queries
+### Alternative MongoDB client with SQL-like queries
 
 Before you continue to use app, you can run script to populate your database with default data
 
