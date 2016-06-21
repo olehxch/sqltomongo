@@ -1,0 +1,19 @@
+{
+  "name": "sqltomongo",
+  "version": "1.0.0",
+  "description": "SQL to MongoDB query mapper",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "initdb": "node initdb",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oleh C.",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "mongodb": "^2.1.18",
+    "node-sqlparser": "^1.0.2",
+    "prompt": "^1.0.0"
+  }
+}
