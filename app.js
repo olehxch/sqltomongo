@@ -128,7 +128,6 @@ function parseWhere(root) {
 
         // extract leaf binary expressions
         if(operator === 'AND') {
-
             const [left, e1] = parseWhere(root.left)
             const [right, e2] = parseWhere(root.right)
 
@@ -154,6 +153,8 @@ function parseWhere(root) {
 }
 
 /**
+ * Parses query and generates relative object
+ * 
  * SELECT [<Projections>] [FROM <Target>]
  *  [WHERE <Condition>*]
  *  [ORDER BY <Fields>* [ASC|DESC] *]
@@ -232,6 +233,4 @@ function quit() {
 /**
  * Handle CTRL+C
  */
-process.on("SIGINT", () => {
-    quit()
-})
+process.on("SIGINT", quit)
