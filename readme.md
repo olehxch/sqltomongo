@@ -1,4 +1,4 @@
-# Alternative MongoDB client with SQL-like queries
+### Alternative MongoDB client with SQL-like queries
 
 Before you continue to use app, you can run script to populate your database with default data
 
@@ -12,6 +12,13 @@ node app
 ```
 
 #### Commands
+Write query
+```
+SELECT _id, name FROM users
+SELECT * FROM users WHERE age > 26 ORDER BY age ASC
+SELECT * FROM users WHERE age > 26 and name <> 'John' ORDER BY age DESC
+```
+
 To exit from repl just type
 ```
 quit
